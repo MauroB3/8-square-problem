@@ -12,6 +12,15 @@ class Node:
     def __hash__(self):
         return hash(str(self.state))
 
+    def __le__(self, other):
+        return True
+
+    def __lt__(self, other):
+        return True
+
+    def __str__(self):
+        return str(self.state)
+
     def get_position(self, x, y):
         return self.state[x][y]
 

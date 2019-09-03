@@ -1,5 +1,7 @@
-from src.node import Node
-from src.graph import Graph
+from node import Node
+from graph import Graph
+from greedy_search import gs
+from heuristics import h
 
 
 """
@@ -10,15 +12,11 @@ from src.graph import Graph
 }
 """
 
-matrix = [[4, 7, 8], [5, 1, 3], [2, 6, 0]]
-matrix2 = [[4, 7, 8], [5, 1, 0], [2, 6, 3]]
+matrix = [[1, 2, 3], [4, 5, 6], [7, 0, 8]]
 
+first_node = Node(matrix)
 
-node = Node(matrix)
-node2 = Node(matrix2)
-graph = Graph(node)
+graph = Graph(first_node)
 
-
-print(node.__hash__())
-print(node2.__hash__())
+print(gs(graph, first_node, h))
 
