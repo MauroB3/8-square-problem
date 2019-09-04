@@ -3,8 +3,9 @@ import copy
 
 class Node:
 
-    def __init__(self, state):
+    def __init__(self, state, last_movement = ""):
         self.state = state
+        self.last_movement = last_movement
 
     def __eq__(self, other):
         return isinstance(other, self.__class__) and self.state == other.state
@@ -39,7 +40,7 @@ class Node:
             result = copy.deepcopy(self.state)
             result[x][y] = self.state[x - 1][y]
             result[x - 1][y] = self.state[x][y]
-            return [Node(result)]
+            return [Node(result, "↑")]
         else:
             return []
 
@@ -49,7 +50,7 @@ class Node:
             result = copy.deepcopy(self.state)
             result[x][y] = self.state[x + 1][y]
             result[x + 1][y] = self.state[x][y]
-            return [Node(result)]
+            return [Node(result, "↓")]
         else:
             return []
 
@@ -59,7 +60,7 @@ class Node:
             result = copy.deepcopy(self.state)
             result[x][y] = self.state[x][y - 1]
             result[x][y - 1] = self.state[x][y]
-            return [Node(result)]
+            return [Node(result, "←")]
         else:
             return []
 
@@ -69,6 +70,6 @@ class Node:
             result = copy.deepcopy(self.state)
             result[x][y] = self.state[x][y + 1]
             result[x][y + 1] = self.state[x][y]
-            return [Node(result)]
+            return [Node(result, "→")]
         else:
             return []

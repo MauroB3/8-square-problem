@@ -7,5 +7,4 @@ def h(node):
         for y in range(0, 3):
             if node.get_position(x, y) != matrix[x][y]:
                 result += 1
-    print("Para ", node.state, " la heuristica es ", result)
     return result
