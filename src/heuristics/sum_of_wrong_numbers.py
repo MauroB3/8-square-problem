@@ -1,4 +1,4 @@
-from heuristics import goal
+from heuristics.goal import goal
 
 
 def sum_of_wrong_numbers(node):
