@@ -1,7 +1,7 @@
 from queue import PriorityQueue
 
 
-def gs(graph, initial, h):
+def greedy_search(graph, initial, h):
     p_queue = PriorityQueue()
     visited = set()
     p_queue.put((h(initial), initial, []))

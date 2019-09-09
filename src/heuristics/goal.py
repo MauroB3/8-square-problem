@@ -8,3 +8,4 @@ def find_position_in_goal(n):
         for y in range(0, 3):
             if goal[x][y] == n:
                 return x, y
+
