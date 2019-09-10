@@ -9,7 +9,7 @@ def greedy_search(graph, initial, h):
     while not p_queue.empty():
         priority, node, path = p_queue.get_nowait()
         if priority == 0:
-            return node.state, path
+            return node.state, path, len(path), len(visited)
 
         for target_node in graph[node]:
             if target_node not in visited:
